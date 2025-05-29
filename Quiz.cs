@@ -30,13 +30,19 @@ namespace QuizAppC_
                 int userChoice = GetUserChoice();
                 if (question.IsCorrectAnswer(userChoice))
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!");
+                    Console.ResetColor();
+
                     _score++;
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Wrong! The correct answer was: {question.Answers[question.CorrectAnswerIndex]}");
+                    Console.ResetColor();
                 }
+
             }
             DisplayResults();
 
